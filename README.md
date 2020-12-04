@@ -5,3 +5,4 @@ Calculate teh 3x3 matrixs with
 -SOR(Successive Over-Relaxation) Method
 You can choose iteration step size and W factor for SOR method.
 There no application on internet for calculating this three in a row.
+Also you can change background color :)

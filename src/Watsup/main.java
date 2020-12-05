@@ -77,7 +77,12 @@ public class main extends javax.swing.JFrame {
     
     public void jacobi() {
         jTextArea1.setText("");
-        jTextArea1.append("--------------------GAUSS JACOBI--------------------\n");        
+        
+        jTextArea1.append("x1 = "+(x14/x11)+"   +   ( "+ ((-1*x13)/x11) +"(x3) )   +   ( "+ ((-1*x12)/x11) +"(x2) ) \n");
+        jTextArea1.append("x2 = "+(x24/x22)+"   +   ( "+ ((-1*x23)/x22) +"(x3) )   +   ( "+ ((-1*x21)/x22) +"(x1) ) \n");
+        jTextArea1.append("x3 = "+(x34/x33)+"   +   ( "+ ((-1*x31)/x33) +"(x1) )   +   ( "+ ((-1*x32)/x33) +"(x2) ) \n\n");
+        
+        jTextArea1.append("----------------------GAUSS JACOBI----------------------\n");        
         jTextArea1.append("ITERATION  |        X1        |         X2        |        X3        ");
         jTextArea1.append("\n______________________________________");
         
@@ -110,7 +115,12 @@ public class main extends javax.swing.JFrame {
     
     public void seidel() {
         jTextArea1.setText("");
-        jTextArea1.append("-------------------GAUSSIAN SEIDEL-------------------\n");        
+        
+        jTextArea1.append("x1 = "+(x14/x11)+"   +   ( "+ ((-1*x13)/x11) +"(x3) )   +   ( "+ ((-1*x12)/x11) +"(x2) ) \n");
+        jTextArea1.append("x2 = "+(x24/x22)+"   +   ( "+ ((-1*x23)/x22) +"(x3) )   +   ( "+ ((-1*x21)/x22) +"(x1) ) \n");
+        jTextArea1.append("x3 = "+(x34/x33)+"   +   ( "+ ((-1*x31)/x33) +"(x1) )   +   ( "+ ((-1*x32)/x33) +"(x2) ) \n\n");
+        
+        jTextArea1.append("--------------------GAUSSIAN SEIDEL-------------------\n");        
         jTextArea1.append("ITERATION  |        X1        |         X2        |        X3        ");
         jTextArea1.append("\n______________________________________");
         
@@ -145,6 +155,11 @@ public class main extends javax.swing.JFrame {
         }
         
         jTextArea1.setText("");
+     
+        jTextArea1.append("x1 = x1   +   (w / "+x11+")  [ "+x14+"   +   ( "+(-1*x11)+"(x1) )   +   ( "+ (-1*x12) +"(x2) )   +   ( "+ (-1*x13) +"(x3) )  ] \n");
+        jTextArea1.append("x2 = x2   +   (w / "+x22+")  [ "+x24+"   +   ( "+(-1*x21)+"(x1) )   +   ( "+ (-1*x22) +"(x2) )   +   ( "+ (-1*x23) +"(x3) )  ] \n");
+        jTextArea1.append("x3 = x3   +   (w / "+x33+")  [ "+x34+"   +   ( "+(-1*x31)+"(x1) )   +   ( "+ (-1*x32) +"(x2) )   +   ( "+ (-1*x33) +"(x3) )  ] \n\n");
+        
         jTextArea1.append("-----------------SOR METHOD(w = "+w+")-----------------\n");        
         jTextArea1.append("ITERATION  |        X1        |         X2        |        X3        ");
         jTextArea1.append("\n______________________________________");
@@ -223,7 +238,7 @@ public class main extends javax.swing.JFrame {
         setTitle("JACOBI-SEIDEL-SOR CALCULATOR");
         setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel1.setBackground(new java.awt.Color(0, 51, 51));
+        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
 
         jTextField1x1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jTextField1x1.setText("10");
@@ -269,7 +284,7 @@ public class main extends javax.swing.JFrame {
         jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
-        jTextArea1.setText("YOU SHOULD ENTER PIVOTED VERSION OF MATRIX \nOTHERWISE PROGRAM WILL BE WORKED WRONG");
+        jTextArea1.setText("YOU SHOULD ENTER PIVOTED VERSION OF MATRIX \nOTHERWISE PROGRAM WILL BE WORKED WRONG\n\nİSMAİL KEYVAN\nGithub : github.com/Keyvan14162?tab=repositories");
         jScrollPane1.setViewportView(jTextArea1);
 
         jTextField3x3.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N

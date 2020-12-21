@@ -9,3 +9,4 @@ There is no application on internet for calculating this three in a row.(Maybe t
 Also you can change background color :)
 
 Just download and run the .jar file.
+![](sample.jgg.jpg)

@@ -293,7 +293,7 @@ public class main extends javax.swing.JFrame {
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
         jTextArea1.setRows(5);
-        jTextArea1.setText("YOU MUST ENTER PIVOTED VERSION OF MATRIX \nOTHERWISE PROGRAM WILL BE WORKED WRONG\n\nIn the current example:\n10(x1) - 2(x2) + 1(x3) = 13\n1(x1) + 10(x2) - 2(x3) = 13\n-2(x1) + 1(x2) + 10(x3) = 13\n\nProgram will find x values ​​using selected operation\n\nThe W factor (relaxation coefficient)\nis only required for the ask method.\n\n\nİSMAİL KEYVAN\nGithub : github.com/Keyvan14162?tab=repositories");
+        jTextArea1.setText("YOU MUST ENTER PIVOTED VERSION OF MATRIX \nOTHERWISE PROGRAM WILL BE WORKED WRONG\n\nIn the current example:\n10(x1) - 2(x2) + 1(x3) = 13\n1(x1) + 10(x2) - 2(x3) = 13\n-2(x1) + 1(x2) + 10(x3) = 13\n\nProgram will find x values ​​using selected operation\n\nThe W factor (relaxation coefficient)\nis only required for the SOR method.\n\n\nİSMAİL KEYVAN\nGithub : github.com/Keyvan14162?tab=repositories");
         jTextArea1.setOpaque(false);
         jScrollPane1.setViewportView(jTextArea1);
 

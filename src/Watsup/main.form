@@ -313,7 +313,7 @@
                   <Font name="Monospaced" size="12" style="0"/>
                 </Property>
                 <Property name="rows" type="int" value="5"/>
-                <Property name="text" type="java.lang.String" value="YOU MUST ENTER PIVOTED VERSION OF MATRIX &#xa;OTHERWISE PROGRAM WILL BE WORKED WRONG&#xa;&#xa;In the current example:&#xa;10(x1) - 2(x2) + 1(x3) = 13&#xa;1(x1) + 10(x2) - 2(x3) = 13&#xa;-2(x1) + 1(x2) + 10(x3) = 13&#xa;&#xa;Program will find x values &#x200b;&#x200b;using selected operation&#xa;&#xa;The W factor (relaxation coefficient)&#xa;is only required for the ask method.&#xa;&#xa;&#xa;&#x130;SMA&#x130;L KEYVAN&#xa;Github : github.com/Keyvan14162?tab=repositories"/>
+                <Property name="text" type="java.lang.String" value="YOU MUST ENTER PIVOTED VERSION OF MATRIX &#xa;OTHERWISE PROGRAM WILL BE WORKED WRONG&#xa;&#xa;In the current example:&#xa;10(x1) - 2(x2) + 1(x3) = 13&#xa;1(x1) + 10(x2) - 2(x3) = 13&#xa;-2(x1) + 1(x2) + 10(x3) = 13&#xa;&#xa;Program will find x values &#x200b;&#x200b;using selected operation&#xa;&#xa;The W factor (relaxation coefficient)&#xa;is only required for the SOR method.&#xa;&#xa;&#xa;&#x130;SMA&#x130;L KEYVAN&#xa;Github : github.com/Keyvan14162?tab=repositories"/>
                 <Property name="opaque" type="boolean" value="false"/>
               </Properties>
             </Component>

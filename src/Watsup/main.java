@@ -1,13 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Watsup;
 
 import java.awt.Color;
 import java.text.DecimalFormat;
 import java.util.Random;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -21,6 +17,8 @@ public class main extends javax.swing.JFrame {
      */
     public main() {
         initComponents();
+        fullScreen();
+        
     }
     
     int iter = 0;
@@ -35,8 +33,12 @@ public class main extends javax.swing.JFrame {
     float tempx2;
     float tempx3;
     
-    public void getValues() {      
-       
+    
+    public final void fullScreen(){
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH); // Fullscreen icin
+    }
+    
+    public void getValues() {           
         try{
             iteratorSteps = Integer.valueOf(jTextFieldIterator.getText());
             x11 = Float.valueOf(jTextField1x1.getText());
@@ -82,9 +84,9 @@ public class main extends javax.swing.JFrame {
         jTextArea1.append("x2 = "+(x24/x22)+"   +   ( "+ ((-1*x23)/x22) +"(x3) )   +   ( "+ ((-1*x21)/x22) +"(x1) ) \n");
         jTextArea1.append("x3 = "+(x34/x33)+"   +   ( "+ ((-1*x31)/x33) +"(x1) )   +   ( "+ ((-1*x32)/x33) +"(x2) ) \n\n");
         
-        jTextArea1.append("----------------------GAUSS JACOBI----------------------\n");        
-        jTextArea1.append("ITERATION  |        X1        |         X2        |        X3        ");
-        jTextArea1.append("\n______________________________________");
+        jTextArea1.append("-----------------------GAUSS JACOBI-----------------------\n");        
+        jTextArea1.append("ITERATION          X1              X2             X3        ");
+        jTextArea1.append("\n____________________________________________________________");
         
         for(int i=0 ; i<iteratorSteps ; i++){
             
@@ -120,9 +122,9 @@ public class main extends javax.swing.JFrame {
         jTextArea1.append("x2 = "+(x24/x22)+"   +   ( "+ ((-1*x23)/x22) +"(x3) )   +   ( "+ ((-1*x21)/x22) +"(x1) ) \n");
         jTextArea1.append("x3 = "+(x34/x33)+"   +   ( "+ ((-1*x31)/x33) +"(x1) )   +   ( "+ ((-1*x32)/x33) +"(x2) ) \n\n");
         
-        jTextArea1.append("--------------------GAUSSIAN SEIDEL-------------------\n");        
-        jTextArea1.append("ITERATION  |        X1        |         X2        |        X3        ");
-        jTextArea1.append("\n______________________________________");
+        jTextArea1.append("----------------------GAUSSIAN SEIDEL---------------------\n");        
+        jTextArea1.append("ITERATION          X1              X2             X3        ");
+        jTextArea1.append("\n____________________________________________________________");
         
         for(int i=0 ; i<iteratorSteps ; i++){         
             
@@ -160,9 +162,9 @@ public class main extends javax.swing.JFrame {
         jTextArea1.append("x2 = x2   +   (w / "+x22+")  [ "+x24+"   +   ( "+(-1*x21)+"(x1) )   +   ( "+ (-1*x22) +"(x2) )   +   ( "+ (-1*x23) +"(x3) )  ] \n");
         jTextArea1.append("x3 = x3   +   (w / "+x33+")  [ "+x34+"   +   ( "+(-1*x31)+"(x1) )   +   ( "+ (-1*x32) +"(x2) )   +   ( "+ (-1*x33) +"(x3) )  ] \n\n");
         
-        jTextArea1.append("-----------------SOR METHOD(w = "+w+")-----------------\n");        
-        jTextArea1.append("ITERATION  |        X1        |         X2        |        X3        ");
-        jTextArea1.append("\n______________________________________");
+        jTextArea1.append("-------------------SOR METHOD(w = "+w+")--------------------\n");        
+        jTextArea1.append("ITERATION          X1              X2             X3        ");
+        jTextArea1.append("\n____________________________________________________________");
         
         for(int i=0 ; i<iteratorSteps ; i++){         
             
@@ -235,7 +237,8 @@ public class main extends javax.swing.JFrame {
         jButtonColor = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("JACOBI-SEIDEL-SOR CALCULATOR");
+        setTitle("Jacobi-Seidel-SOR Calculator");
+        setAlwaysOnTop(true);
         setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
@@ -252,14 +255,19 @@ public class main extends javax.swing.JFrame {
         jTextField2x1.setPreferredSize(new java.awt.Dimension(70, 40));
 
         jTextField3x1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jTextField3x1.setText("2");
+        jTextField3x1.setText("-2");
         jTextField3x1.setBorder(null);
         jTextField3x1.setPreferredSize(new java.awt.Dimension(70, 40));
 
         jTextField1x2.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jTextField1x2.setText("2");
+        jTextField1x2.setText("-2");
         jTextField1x2.setBorder(null);
         jTextField1x2.setPreferredSize(new java.awt.Dimension(70, 40));
+        jTextField1x2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1x2ActionPerformed(evt);
+            }
+        });
 
         jTextField2x2.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jTextField2x2.setText("10");
@@ -277,14 +285,16 @@ public class main extends javax.swing.JFrame {
         jTextField1x3.setPreferredSize(new java.awt.Dimension(70, 40));
 
         jTextField2x3.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jTextField2x3.setText("2");
+        jTextField2x3.setText("-2");
         jTextField2x3.setBorder(null);
         jTextField2x3.setPreferredSize(new java.awt.Dimension(70, 40));
 
         jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
         jTextArea1.setRows(5);
-        jTextArea1.setText("YOU SHOULD ENTER PIVOTED VERSION OF MATRIX \nOTHERWISE PROGRAM WILL BE WORKED WRONG\n\nİSMAİL KEYVAN\nGithub : github.com/Keyvan14162?tab=repositories");
+        jTextArea1.setText("YOU MUST ENTER PIVOTED VERSION OF MATRIX \nOTHERWISE PROGRAM WILL BE WORKED WRONG\n\nIn the current example:\n10(x1) - 2(x2) + 1(x3) = 13\n1(x1) + 10(x2) - 2(x3) = 13\n-2(x1) + 1(x2) + 10(x3) = 13\n\nProgram will find x values ​​using selected operation\n\nThe W factor (relaxation coefficient)\nis only required for the ask method.\n\n\nİSMAİL KEYVAN\nGithub : github.com/Keyvan14162?tab=repositories");
+        jTextArea1.setOpaque(false);
         jScrollPane1.setViewportView(jTextArea1);
 
         jTextField3x3.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
@@ -333,6 +343,7 @@ public class main extends javax.swing.JFrame {
             }
         });
 
+        jButtonJacobi.setBackground(new java.awt.Color(255, 255, 255));
         jButtonJacobi.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButtonJacobi.setText("CALCULATE BY GAUSS JACOBI METHOD");
         jButtonJacobi.addActionListener(new java.awt.event.ActionListener() {
@@ -475,6 +486,7 @@ public class main extends javax.swing.JFrame {
         getAccessibleContext().setAccessibleDescription("");
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonSORActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSORActionPerformed
@@ -500,6 +512,10 @@ public class main extends javax.swing.JFrame {
         jPanel1.setBackground(randomColor());
     }//GEN-LAST:event_jButtonColorActionPerformed
 
+    private void jTextField1x2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1x2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1x2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -511,7 +527,7 @@ public class main extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
